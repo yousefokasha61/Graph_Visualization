@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.collections.FXCollections?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="770.0" prefWidth="1142.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+    <TextField fx:id="edgeFrom" layoutX="465.0" layoutY="67.0" prefHeight="30.0" prefWidth="214.0" promptText="Edge starts from" />
+    <TextField fx:id="edgeTo" layoutX="465.0" layoutY="115.0" prefHeight="30.0" prefWidth="214.0" promptText="Edge ends at" />
+    <TextField fx:id="edgeName" layoutX="465.0" layoutY="161.0" prefHeight="30.0" prefWidth="214.0" promptText="Enter edge name" />
+    <Label disable="true" layoutX="365.0" layoutY="70.0" prefHeight="24.0" prefWidth="98.0" text="Edge From:" textAlignment="RIGHT">
+        <font>
+            <Font name="System Bold" size="12.0" />
+        </font>
+    </Label>
+    <Label disable="true" layoutX="366.0" layoutY="118.0" prefHeight="24.0" prefWidth="98.0" text="Edge To:">
+        <font>
+            <Font name="System Bold" size="12.0" />
+        </font>
+    </Label>
+    <Label disable="true" layoutX="366.0" layoutY="164.0" prefHeight="24.0" prefWidth="98.0" text="Edge Name:">
+        <font>
+            <Font name="System Bold" size="12.0" />
+        </font>
+    </Label>
+    <Label disable="true" layoutX="365.0" layoutY="26.0" prefHeight="24.0" prefWidth="98.0" text="Graph Type:">
+        <font>
+            <Font name="System Bold" size="12.0" />
+        </font>
+    </Label>
+    <Button fx:id="addEdge" blendMode="MULTIPLY" layoutX="560.0" layoutY="244.0" mnemonicParsing="false" onAction="#addEdge" prefHeight="30.0" prefWidth="120.0" style="-fx-background-color: black; -fx-border-color: lightgray; -fx-border-width: 2px; -fx-border-radius: 5px;" text="Add Edge" textFill="WHITE">
+        <font>
+            <Font name="System Bold" size="14.0" />
+        </font>
+    </Button>
+    <ComboBox fx:id="graphType" layoutX="463.0" layoutY="25.0" prefWidth="150.0" promptText="Select Type">
+        <items>
+            <FXCollections fx:factory="observableArrayList">
+                <String fx:value="Directed" />
+                <String fx:value="Undirected" />
+            </FXCollections>
+        </items>
+    </ComboBox>
+    <Button id="addVert" fx:id="addVertex" blendMode="MULTIPLY" layoutX="192.0" layoutY="245.0" mnemonicParsing="false" onAction="#addVertex" prefHeight="30.0" prefWidth="120.0" style="-fx-background-color: black; -fx-border-color: lightgray; -fx-border-width: 2px; -fx-border-radius: 5px;" text="Add Vertex" textFill="WHITE">
+        <font>
+            <Font name="System Bold" size="14.0" />
+        </font>
+    </Button>
+    <TextField fx:id="vSymbol" layoutX="24.0" layoutY="120.0" prefHeight="30.0" prefWidth="288.0" promptText="Enter vertex symbol" />
+    <Label id="edgeProperties" layoutX="24.0" layoutY="84.0" prefHeight="24.0" prefWidth="98.0" text="Vertex Name:" textAlignment="RIGHT">
+        <font>
+            <Font name="System Bold" size="13.0" />
+        </font>
+    </Label>
+   <TableView fx:id="dataTable" editable="true" layoutX="14.0" layoutY="331.0" prefHeight="277.0" prefWidth="682.0">
+     <columns>
+       <TableColumn fx:id="edgeNameCol" prefWidth="170.5" text="Edge Name" />
+       <TableColumn fx:id="edgeFromCol" prefWidth="170.5" text="From" />
+         <TableColumn fx:id="edgeToCol" prefWidth="170.5" text="To" />
+         <TableColumn fx:id="edgeWeightCol" prefWidth="170.5" text="Weight" />
+     </columns>
+   </TableView>
+   <Label id="edgeProperties" layoutX="14.0" layoutY="295.0" prefHeight="24.0" prefWidth="120.0" text="Data Entered" textAlignment="RIGHT">
+      <font>
+         <Font name="System Bold" size="14.0" />
+      </font>
+   </Label>
+   <TextField fx:id="edgeWeight" layoutX="465.0" layoutY="206.0" prefHeight="30.0" prefWidth="214.0" promptText="Enter weight" />
+   <Label disable="true" layoutX="366.0" layoutY="209.0" prefHeight="24.0" prefWidth="98.0" text="Edge Weight:">
+      <font>
+         <Font name="System Bold" size="12.0" />
+      </font>
+   </Label>
+   <Button id="restart" fx:id="restartProgram" blendMode="MULTIPLY" layoutX="722.0" layoutY="467.0" mnemonicParsing="false" onAction="#restart" prefHeight="34.0" prefWidth="322.0" style="-fx-background-color: black; -fx-border-color: lightgray; -fx-border-radius: 5px; -fx-border-width: 2px;" text="Restart program" textFill="WHITE">
+      <font>
+         <Font name="System Bold" size="14.0" />
+      </font>
+   </Button>
+   <Button id="showGraphButton" fx:id="showGraphEntered" blendMode="MULTIPLY" layoutX="722.0" layoutY="74.0" mnemonicParsing="false" onAction="#showGraph" prefHeight="34.0" prefWidth="322.0" style="-fx-background-color: black; -fx-border-color: lightgray; -fx-border-width: 2px; -fx-border-radius: 5px;" text="Show Graph Entered" textFill="WHITE">
+      <font>
+         <Font name="System Bold" size="14.0" />
+      </font>
+   </Button>
+   <Button id="showMaximumFlowButton" fx:id="showMaximumFlow" blendMode="MULTIPLY" layoutX="855.0" layoutY="214.0" mnemonicParsing="false" onAction="#showMaximumFLowGraph" prefHeight="34.0" prefWidth="190.0" style="-fx-background-color: black; -fx-border-color: lightgray; -fx-border-width: 2px; -fx-border-radius: 5px;" text="Show Maximum Flow" textFill="WHITE">
+      <font>
+         <Font name="System Bold" size="14.0" />
+      </font>
+   </Button>
+   <Button id="showDijkstra" fx:id="showDijkstra" blendMode="MULTIPLY" layoutX="856.0" layoutY="321.0" mnemonicParsing="false" onAction="#showDijkstraGraph" prefHeight="34.0" prefWidth="190.0" style="-fx-background-color: black; -fx-border-color: lightgray; -fx-border-width: 2px; -fx-border-radius: 5px;" text="Show Dijkstra" textFill="WHITE">
+      <font>
+         <Font name="System Bold" size="14.0" />
+      </font>
+   </Button>
+   <Label id="edgeProperties" layoutX="834.0" layoutY="22.0" prefHeight="31.0" prefWidth="98.0" text="Options">
+      <font>
+         <Font name="System Bold" size="21.0" />
+      </font>
+   </Label>
+   <Button id="resetVerticesButton" fx:id="resetVertices" blendMode="MULTIPLY" layoutX="722.0" layoutY="366.0" mnemonicParsing="false" onAction="#resetVertices" prefHeight="34.0" prefWidth="322.0" style="-fx-background-color: black; -fx-border-color: lightgray; -fx-border-radius: 5px; -fx-border-width: 2px;" text="Reset Vertices" textFill="WHITE">
+      <font>
+         <Font name="System Bold" size="14.0" />
+      </font>
+   </Button>
+   <Button id="resetEdgesButton" fx:id="resetEdges" blendMode="MULTIPLY" layoutX="722.0" layoutY="417.0" mnemonicParsing="false" onAction="#resetEdges" prefHeight="34.0" prefWidth="322.0" style="-fx-background-color: black; -fx-border-color: lightgray; -fx-border-radius: 5px; -fx-border-width: 2px;" text="Reset Edges" textFill="WHITE">
+      <font>
+         <Font name="System Bold" size="14.0" />
+      </font>
+   </Button>
+   <Label disable="true" layoutX="733.0" layoutY="120.0" prefHeight="24.0" prefWidth="98.0" text="vertex start" textAlignment="RIGHT">
+      <font>
+         <Font name="System Bold" size="12.0" />
+      </font>
+   </Label>
+   <Label disable="true" layoutX="733.0" layoutY="159.0" prefHeight="24.0" prefWidth="98.0" text="vertex end">
+      <font>
+         <Font name="System Bold" size="12.0" />
+      </font>
+   </Label>
+   <TextField fx:id="maxFlowStart" layoutX="843.0" layoutY="117.0" prefHeight="30.0" prefWidth="201.0" promptText="start from vertex" />
+   <TextField fx:id="maxFlowEnd" layoutX="842.0" layoutY="156.0" prefHeight="30.0" prefWidth="201.0" promptText="reach vertex" />
+   <Button fx:id="clearDijkstraButton" blendMode="MULTIPLY" layoutX="722.0" layoutY="321.0" mnemonicParsing="false" onAction="#clearDijkstra" prefHeight="30.0" prefWidth="120.0" style="-fx-background-color: black; -fx-border-color: lightgray; -fx-border-width: 2px; -fx-border-radius: 5px;" text="Clear" textFill="WHITE">
+      <font>
+         <Font name="System Bold" size="14.0" />
+      </font>
+   </Button>
+   <Label disable="true" layoutX="733.0" layoutY="273.0" prefHeight="24.0" prefWidth="98.0" text="vertex start" textAlignment="RIGHT">
+      <font>
+         <Font name="System Bold" size="12.0" />
+      </font>
+   </Label>
+   <TextField fx:id="DijkstraStart" layoutX="857.0" layoutY="270.0" prefHeight="30.0" prefWidth="190.0" promptText="start from vertex" />
+   <Button fx:id="clearMaxFlowBtn" blendMode="MULTIPLY" layoutX="722.0" layoutY="214.0" mnemonicParsing="false" onAction="#clearMaxFlow" prefHeight="30.0" prefWidth="120.0" style="-fx-background-color: black; -fx-border-color: lightgray; -fx-border-width: 2px; -fx-border-radius: 5px;" text="Clear" textFill="WHITE">
+      <font>
+         <Font name="System Bold" size="14.0" />
+      </font>
+   </Button>
+</Pane>
